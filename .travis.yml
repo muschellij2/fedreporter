@@ -1,17 +1,20 @@
 language: R
-sudo: no
+sudo: false
 cache: packages
 after_success: if [ "$TRAVIS_OS_NAME" == "linux" ]; then Rscript -e 'covr::coveralls(type
   = "all")'; fi
-warnings_are_errors: yes
+warnings_are_errors: true
 before_deploy: if [ "$TRAVIS_OS_NAME" == "osx" ]; then rm -f *.tar.gz; fi
-r_check_args: --as-cran --install-args=--build
+r_check_args: "--as-cran --install-args=--build"
+
 deploy:
   provider: releases
   skip_cleanup: yes
+  api_key:
+    secure: SuOkIfMPFa/x8TewWnZRohcRzVEmQdp6G4HHmS1omrs/OD1yp97vHllaaXLa9vmHCIT4uNFjiPCqOVPkIzvesbPOidgJlr+p6n2CeF4679aRBedpnyj+CNN9lemHyEpuHcd9U6oEMRodD5DvGoeVPbafTLPszSFWzv81FM8WNbXO3KVsaeg0rnNCRdVuaawrmqU8uOHin0/KDlQyB+35LaAJI1QS3/dE81wqzxkdcAeM56wtwIjenngQfcu6aDIYjmfBiVVz6q26eUaiUcgVZMeSZP+XfesUyNslqcxd7Q3tg3tTdI8jo1BU4X6MgRB5pUgp9JUXOdDMhSH+IcKP8MsPcNqaGhDyVDVv8BJkIHMG4TYsgB2J/wuxwGUj28U0nmNlzrQDREZIIucE2qB7nTErV/2osAobukEELmqnVDxa88QytEPJAqTsfOIBvxZ22es7RTHdgtQpfMTO0MFFLTeupw/lhNvWRoQI/Qp83nUxxkE1ZTm+6HdWja/eQIPInKqhZm22FcDJzC4mkarxOcnZxfg5OCdMu6EN5VmpUxNdEt+pOH1jxXuwFKJ1S+ZMXvFISlK5nk/+L1ImQ2yEEgjACkaeQi/hrLO5jSzzsego9bcX8mILskhHtU9kN4G2LUrXX3+WdQAQ1T9A6V6Ukczk6LzguM4BDrBQjXX3DvE=  
   file_glob: yes
   file: nihexport*.t*gz
-  'on':
+  on:
     tags: yes
-    repo: muschellij2/nihexport
+    repo: muschellij2/fedreporter
 
