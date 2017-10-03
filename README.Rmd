@@ -25,3 +25,46 @@ You can install `fedreporter` from GitHub with:
 # install.packages("remotes")
 remotes::install_github("muschellij2/fedreporter")
 ```
+
+
+# Example 
+
+## Project Search for R01s from NIH
+```{r}
+library(fedreporter)
+res = fe_projects_search(
+  project_number = "*R01*",
+  fiscal_year = 2012,
+  agency = "NIH",
+  text = "stroke",
+  text_field = "title")
+names(res)
+res$response
+length(res$content)
+names(res$content)
+res$content$offset
+length(res$content$items)
+```
+
+
+## Project Search for Individual PIs
+
+```{r}
+res = fe_projects_search(pi_name = "MATSUI, ELIZABETH")
+items = res$content$items
+con_pis = sapply(items, "[[", "contactPi")
+keep = grepl("^MATSUI", con_pis)
+items = items[keep]
+mat_costs = sapply(items, "[[", "totalCostAmount")
+sum(mat_costs)
+                         
+res = fe_projects_search(pi_name = "PENG, ROGER")
+items = res$content$items
+con_pis = sapply(items, "[[", "contactPi")
+keep = grepl("^PENG", con_pis)
+items = items[keep]
+peng_costs = sapply(items, "[[", "totalCostAmount")
+sum(peng_costs)
+                         
+# both = fe_projects_search(pi_name = c("MATSUI, ELIZABETH", "PENG, ROGER"))
+```
