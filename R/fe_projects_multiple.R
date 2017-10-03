@@ -1,12 +1,12 @@
 #' Fetch multiple projects by internal Federal RePORTER IDs (SM ID
 #' or Project Numbers)
 #'
-#' @param internal_id internal Federal RePORTER generated unique ID
+#' @param internal_id internal Federal 'RePORTER' generated unique ID
 #' associated with each project. It is available as part of
 #' export on Federal RePORTER search results. Example, 739576.
 #' @param project_number unique number that is assigned to a project
-#'  by the affiliated federal agency. Examples, 5R01MH092950-05,
-#'  1R01CA183929-01A1, USFS-0000779.
+#'  by the affiliated federal agency. Examples, \code{'5R01MH092950-05'},
+#'  \code{'1R01CA183929-01A1', \code{'USFS-0000779'}.
 #' @param secure passed to \code{\link{fe_base_url}} for https
 #' @note See
 #' \url{https://api.federalreporter.nih.gov/#!/Projects/Get_Project},

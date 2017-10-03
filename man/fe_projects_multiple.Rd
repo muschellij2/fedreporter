@@ -9,13 +9,9 @@ fe_projects_multiple(internal_id = NULL, project_number = NULL,
   secure = TRUE)
 }
 \arguments{
-\item{internal_id}{internal Federal RePORTER generated unique ID
+\item{internal_id}{internal Federal 'RePORTER' generated unique ID
 associated with each project. It is available as part of
 export on Federal RePORTER search results. Example, 739576.}
-
-\item{project_number}{unique number that is assigned to a project
-by the affiliated federal agency. Examples, 5R01MH092950-05,
-1R01CA183929-01A1, USFS-0000779.}
 
 \item{secure}{passed to \code{\link{fe_base_url}} for https}
 }
