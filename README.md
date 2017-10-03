@@ -1,4 +1,6 @@
 
+[![JHU Data Science](http://jhudatascience.org/images/logo.png)](http://jhudatascience.org/)
+
 [![Travis build status](https://travis-ci.org/muschellij2/fedreporter.svg?branch=master)](https://travis-ci.org/muschellij2/fedreporter) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/muschellij2/fedreporter?branch=master&svg=true)](https://ci.appveyor.com/project/muschellij2/fedreporter) [![Coverage status](https://coveralls.io/repos/github/muschellij2/fedreporter/badge.svg?branch=master)](https://coveralls.io/r/muschellij2/fedreporter?branch=master) <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 fedreporter Package:
@@ -32,7 +34,7 @@ res = fe_projects_search(
   text_field = "title")
 #> GET command is:
 #> Response [https://api.federalreporter.nih.gov/v1/Projects/search?query=projectNumber%3A*R01*%24fy%3A2012%24agency%3ANIH%24text%3Astroke%24textFields%3Atitle%24textOperator%3AAND&offset=1&limit=50]
-#>   Date: 2017-10-03 15:31
+#>   Date: 2017-10-03 15:33
 #>   Status: 200
 #>   Content-Type: application/json; charset=utf-8
 #>   Size: 249 kB
@@ -40,7 +42,7 @@ names(res)
 #> [1] "response" "content"
 res$response
 #> Response [https://api.federalreporter.nih.gov/v1/Projects/search?query=projectNumber%3A*R01*%24fy%3A2012%24agency%3ANIH%24text%3Astroke%24textFields%3Atitle%24textOperator%3AAND&offset=1&limit=50]
-#>   Date: 2017-10-03 15:31
+#>   Date: 2017-10-03 15:33
 #>   Status: 200
 #>   Content-Type: application/json; charset=utf-8
 #>   Size: 249 kB
@@ -61,7 +63,7 @@ Project Search for Individual PIs
 res = fe_projects_search(pi_name = "MATSUI, ELIZABETH")
 #> GET command is:
 #> Response [https://api.federalreporter.nih.gov/v1/Projects/search?query=piName%3AMATSUI%2C%20ELIZABETH&offset=1&limit=50]
-#>   Date: 2017-10-03 15:31
+#>   Date: 2017-10-03 15:33
 #>   Status: 200
 #>   Content-Type: application/json; charset=utf-8
 #>   Size: 128 kB
@@ -76,7 +78,7 @@ sum(mat_costs)
 res = fe_projects_search(pi_name = "PENG, ROGER")
 #> GET command is:
 #> Response [https://api.federalreporter.nih.gov/v1/Projects/search?query=piName%3APENG%2C%20ROGER&offset=1&limit=50]
-#>   Date: 2017-10-03 15:31
+#>   Date: 2017-10-03 15:33
 #>   Status: 200
 #>   Content-Type: application/json; charset=utf-8
 #>   Size: 55 kB
