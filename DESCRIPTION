@@ -1,12 +1,16 @@
-Package: nihexport
-Version: 0.1.0
-Title: NIH Exporter Downloader
-Description: Downloads data from NIH 'ExPORTER'
+Package: fedreporter
+Version: 0.2.0
+Title: Federal Exporter API
+Description: Downloads data from Federal 'RePORTER'
+    <https://api.federalreporter.nih.gov/> using 'API' calls.
 Authors@R: structure(list(structure(list(given = "John", family = "Muschelli", 
         role = c("aut", "cre"), email = "muschellij2@gmail.com", 
         comment = NULL), .Names = c("given", "family", "role", "email", 
     "comment"))), class = "person")
 License: GPL-3
+Imports:
+    httr,
+    jsonlite
 Suggests: 
     knitr,
     rmarkdown,
@@ -18,5 +22,7 @@ ByteCompile: true
 Type: Package
 Maintainer: John Muschelli <muschellij2@gmail.com>
 VignetteBuilder: knitr
-URL: https://github.com/muschellij2/nihexport
-BugReports: https://github.com/muschellij2/nihexport/issues
+URL: https://github.com/muschellij2/fedreporter
+BugReports: https://github.com/muschellij2/fedreporter/issues
+RoxygenNote: 6.0.1.9000
+
