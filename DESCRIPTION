@@ -5,10 +5,8 @@ Description: Downloads data from Federal 'RePORTER'
     <https://api.federalreporter.nih.gov/> using the Federal 'RePORTER' API.
     Allows the user to search job projects from different government agencies.
     after their current one.
-Authors@R: structure(list(structure(list(given = "John", family = "Muschelli", 
-        role = c("aut", "cre"), email = "muschellij2@gmail.com", 
-        comment = NULL), .Names = c("given", "family", "role", "email", 
-    "comment"))), class = "person")
+Authors@R: person(given = "John", family = "Muschelli", 
+    role = c("aut", "cre"), email = "muschellij2@gmail.com")
 License: GPL-3
 Imports:
     httr,
