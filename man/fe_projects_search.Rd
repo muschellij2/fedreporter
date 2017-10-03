@@ -55,4 +55,25 @@ fiscal_year = 2012)
 res = fe_projects_search(
 project_number = "*R01*",
 fiscal_year = 2012)
+
+\dontrun{
+res = fe_projects_search(pi_name = "MATSUI, ELIZABETH")
+items = res$content$items
+con_pis = sapply(items, "[[", "contactPi")
+keep = grepl("^MATSUI", con_pis)
+items = items[keep]
+mat_costs = sapply(items, "[[", "totalCostAmount")
+sum(mat_costs)
+
+res = fe_projects_search(pi_name = "PENG, ROGER")
+items = res$content$items
+con_pis = sapply(items, "[[", "contactPi")
+keep = grepl("^PENG", con_pis)
+items = items[keep]
+peng_costs = sapply(items, "[[", "totalCostAmount")
+sum(peng_costs)
+
+both = fe_projects_search(
+pi_name = c("MATSUI, ELIZABETH", "PENG, ROGER"))
+}
 }

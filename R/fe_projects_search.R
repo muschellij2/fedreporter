@@ -32,6 +32,27 @@
 #' res = fe_projects_search(
 #' project_number = "*R01*",
 #' fiscal_year = 2012)
+#'
+#' \dontrun{
+#' res = fe_projects_search(pi_name = "MATSUI, ELIZABETH")
+#' items = res$content$items
+#' con_pis = sapply(items, "[[", "contactPi")
+#' keep = grepl("^MATSUI", con_pis)
+#' items = items[keep]
+#' mat_costs = sapply(items, "[[", "totalCostAmount")
+#' sum(mat_costs)
+#'
+#' res = fe_projects_search(pi_name = "PENG, ROGER")
+#' items = res$content$items
+#' con_pis = sapply(items, "[[", "contactPi")
+#' keep = grepl("^PENG", con_pis)
+#' items = items[keep]
+#' peng_costs = sapply(items, "[[", "totalCostAmount")
+#' sum(peng_costs)
+#'
+#' both = fe_projects_search(
+#' pi_name = c("MATSUI, ELIZABETH", "PENG, ROGER"))
+#' }
 fe_projects_search = function(
   project_number = NULL,
   fiscal_year = NULL,
@@ -97,6 +118,7 @@ fe_projects_search = function(
   # piName
   if (!is.null(pi_name)) {
     pi_name = paste(pi_name, collapse = ";")
+    pi_name = toupper(pi_name)
     query$piName = pi_name
   }
 
@@ -110,6 +132,9 @@ fe_projects_search = function(
   query = paste(query, collapse = "$")
   query = gsub(":", "%3A", query)
   query = gsub("$", "%24", query, fixed = TRUE)
+  query = gsub(" ", "%20", query)
+  query = gsub(",", "%2C", query)
+
 
   query = list(
     query = I(query)
