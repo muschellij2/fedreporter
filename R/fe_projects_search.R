@@ -31,7 +31,10 @@
 #' fiscal_year = 2012)
 #' res = fe_projects_search(
 #' project_number = "*R01*",
-#' fiscal_year = 2012)
+#' fiscal_year = 2012,
+#' agency = "NIH",
+#' text = "stroke",
+#' text_field = "title")
 #'
 #' \dontrun{
 #' res = fe_projects_search(pi_name = "MATSUI, ELIZABETH")
@@ -111,7 +114,7 @@ fe_projects_search = function(
     # textOperator:AND
     if (!is.null(text_operator)) {
       text_operator = match.arg(text_operator)
-      query$textOperator = text_field
+      query$textOperator = text_operator
     }
   }
 

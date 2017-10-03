@@ -54,7 +54,10 @@ project_number = "USFS*",
 fiscal_year = 2012)
 res = fe_projects_search(
 project_number = "*R01*",
-fiscal_year = 2012)
+fiscal_year = 2012,
+agency = "NIH",
+text = "stroke",
+text_field = "title")
 
 \dontrun{
 res = fe_projects_search(pi_name = "MATSUI, ELIZABETH")
