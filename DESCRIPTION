@@ -21,7 +21,6 @@ LazyData: true
 ByteCompile: true
 Type: Package
 Maintainer: John Muschelli <muschellij2@gmail.com>
-VignetteBuilder: knitr
 URL: https://github.com/muschellij2/fedreporter
 BugReports: https://github.com/muschellij2/fedreporter/issues
 RoxygenNote: 6.0.1.9000
