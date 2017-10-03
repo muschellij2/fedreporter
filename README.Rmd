@@ -2,9 +2,9 @@
   output: github_document
 ---
 
-[![Travis build status](https://travis-ci.org/muschellij2/nihexport.svg?branch=master)](https://travis-ci.org/muschellij2/nihexport)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/muschellij2/nihexport?branch=master&svg=true)](https://ci.appveyor.com/project/muschellij2/nihexport)
-[![Coverage status](https://coveralls.io/repos/github/muschellij2/nihexport/badge.svg?branch=master)](https://coveralls.io/r/muschellij2/nihexport?branch=master)
+[![Travis build status](https://travis-ci.org/muschellij2/fedreporter.svg?branch=master)](https://travis-ci.org/muschellij2/fedreporter)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/muschellij2/fedreporter?branch=master&svg=true)](https://ci.appveyor.com/project/muschellij2/fedreporter)
+[![Coverage status](https://coveralls.io/repos/github/muschellij2/fedreporter/badge.svg?branch=master)](https://coveralls.io/r/muschellij2/fedreporter?branch=master)
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r setup, include = FALSE}
@@ -14,14 +14,14 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-"
 )
 ```
-# nihexport Package: 
-The goal of `nihexport` is to provide downloads data from NIH 'ExPORTER'
+# fedreporter Package: 
+The goal of `fedreporter` is to provide downloads data from NIH 'ExPORTER'
 
 ## Installation
 
-You can install `nihexport` from GitHub with:
+You can install `fedreporter` from GitHub with:
 
 ```{r gh-installation, eval = FALSE}
 # install.packages("remotes")
-remotes::install_github("muschellij2/nihexport")
+remotes::install_github("muschellij2/fedreporter")
 ```
