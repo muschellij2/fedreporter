@@ -9,3 +9,7 @@
 
 * This is a new release. Some of the mis-spells are due to how the NIH 
 calls their system, e.g. RePORTER.
+
+## Previous submissions
+
+* Fixed DESCRIPTION spellings.
